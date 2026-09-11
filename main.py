@@ -1,5 +1,8 @@
+from topics.T03_arrays import arrays
+
+
 def main():
-    pass
+    arrays.largest_element()
 
 
 if __name__ == "__main__":
