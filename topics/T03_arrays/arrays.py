@@ -1,3 +1,5 @@
+import imp
+
 from application.tester.loader import load_test_cases
 from application.tester.runner import run_test_case
 
@@ -19,6 +21,12 @@ from topics.T03_arrays.P02_second_largest_element import (
     second_largest_element_naive,
     second_largest_element_better,
     second_largest_element_optimal,
+)
+
+from topics.T03_arrays.P03_second_smallest_element import (
+    second_smallest_element_naive,
+    second_smallest_element_better,
+    second_smallest_element_optimal
 )
 
 test_cases_default = load_test_cases("application/templates/default_test_cases.json")
@@ -71,4 +79,32 @@ def second_largest_element():
 
     for test_case in test_cases_default:
         result = run_test_case(second_largest_element_optimal, test_case)
+        display_result(result)
+
+
+def second_smallest_element():
+    display_problem("SECOND SMALLEST ELEMENT")
+
+    display_approach("Naive")
+
+    display_description("The second smallest element from")
+
+    for test_case in test_cases_default:
+        result = run_test_case(second_smallest_element_naive, test_case)
+        display_result(result)
+
+    display_approach("Better")
+
+    display_description("The second smallest element from")
+
+    for test_case in test_cases_default:
+        result = run_test_case(second_smallest_element_better, test_case)
+        display_result(result)
+
+    display_approach("Optimal")
+
+    display_description("The second smallest element from")
+
+    for test_case in test_cases_default:
+        result = run_test_case(second_smallest_element_optimal, test_case)
         display_result(result)
