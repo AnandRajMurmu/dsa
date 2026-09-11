@@ -1,5 +1,5 @@
 def main():
-    print("DSA COURSE")
+    pass
 
 
 if __name__ == "__main__":
