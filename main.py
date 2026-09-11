@@ -2,7 +2,7 @@ from topics.T03_arrays import arrays
 
 
 def main():
-    arrays.largest_element()
+    arrays.second_largest_element()
 
 
 if __name__ == "__main__":
