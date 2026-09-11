@@ -1,5 +1,3 @@
-import imp
-
 from application.tester.loader import load_test_cases
 from application.tester.runner import run_test_case
 
@@ -27,6 +25,10 @@ from topics.T03_arrays.P03_second_smallest_element import (
     second_smallest_element_naive,
     second_smallest_element_better,
     second_smallest_element_optimal
+)
+
+from topics.T03_arrays.P04_array_is_sorted import (
+    array_is_sorted_optimal
 )
 
 test_cases_default = load_test_cases("application/templates/default_test_cases.json")
@@ -108,3 +110,18 @@ def second_smallest_element():
     for test_case in test_cases_default:
         result = run_test_case(second_smallest_element_optimal, test_case)
         display_result(result)
+
+
+def array_is_sorted():
+    display_problem("ARRAY IS SORTED")
+
+    display_approach("Naive")
+
+    display_description("The array")
+
+    def format_array_is_sorted(value: bool) -> str:
+        return "Sorted" if value else "Not Sorted"
+
+    for test_case in test_cases_default:
+        result = run_test_case(array_is_sorted_optimal, test_case)
+        display_result(result, formatter=format_array_is_sorted)

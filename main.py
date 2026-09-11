@@ -2,7 +2,7 @@ from topics.T03_arrays import arrays
 
 
 def main():
-    arrays.second_smallest_element()
+    arrays.array_is_sorted()
 
 
 if __name__ == "__main__":

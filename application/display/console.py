@@ -1,3 +1,6 @@
+from collections.abc import Callable
+from typing import Any
+
 from application.models.test_result import TestResult
 
 DISPLAY_WIDTH = 43
@@ -24,7 +27,7 @@ def display_description(description: str):
     print(f"\n{description} - ")
 
 
-def display_result(result: TestResult, formatter=str):
+def display_result(result: TestResult, formatter: Callable[[Any], str] = str):
     answer = formatter(result.returned_value)
     print(f"\t{result.original_input} is {answer}")
 
