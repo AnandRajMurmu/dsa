@@ -12,11 +12,12 @@ def second_smallest_element_naive(array):
     """
     sorted_array = sorted(array)
 
-    for i in range(0, len(sorted_array)-1, 1):
-        if sorted_array[i] != sorted_array[i+1]:
-            return sorted_array[i+1]
+    for i in range(0, len(sorted_array) - 1, 1):
+        if sorted_array[i] != sorted_array[i + 1]:
+            return sorted_array[i + 1]
 
     return None
+
 
 def second_smallest_element_better(array):
     """
@@ -34,7 +35,7 @@ def second_smallest_element_better(array):
         O(1)
     """
     first_smallest = array[0]
-    second_smallest = float('inf')
+    second_smallest = float("inf")
 
     for element in array:
         if element < first_smallest:
@@ -44,10 +45,11 @@ def second_smallest_element_better(array):
         if element > first_smallest and element < second_smallest:
             second_smallest = element
 
-    if second_smallest == float('inf'):
+    if second_smallest == float("inf"):
         return None
     else:
         return second_smallest
+
 
 def second_smallest_element_optimal(array):
     """
@@ -61,7 +63,7 @@ def second_smallest_element_optimal(array):
         O(1)
     """
     first_smallest = array[0]
-    second_smallest = float('inf')
+    second_smallest = float("inf")
 
     for element in array:
         if element < first_smallest:
@@ -71,7 +73,7 @@ def second_smallest_element_optimal(array):
         elif element > first_smallest and element < second_smallest:
             second_smallest = element
 
-    if second_smallest == float('inf'):
+    if second_smallest == float("inf"):
         return None
     else:
         return second_smallest

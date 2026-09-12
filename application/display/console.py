@@ -1,8 +1,3 @@
-from collections.abc import Callable
-from typing import Any
-
-from application.models.test_result import TestResult
-
 DISPLAY_WIDTH = 43
 
 
@@ -25,17 +20,14 @@ def display_approach(name: str):
 
 
 def display_description(description: str):
-    print(f"\n{description} - ")
+    print(f"\n{description}")
 
 
-def display_result(result: TestResult, formatter: Callable[[Any], str] = str):
-    answer = formatter(result.returned_value)
-    print(f"\t{result.original_input} is {answer}")
+def display_result(message: str):
+    print(f"\t{message}")
 
 
-def display_fields(result: TestResult, fields: dict):
-    print(f"\t{result.original_input} is")
-
+def display_fields(fields: dict[str, object]):
     for label, value in fields.items():
         print(f"\t\t{label} --> {value}")
 

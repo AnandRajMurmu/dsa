@@ -7,7 +7,7 @@ def left_rotate_array_by_one_optimal(array):
         - After loop ends,
             Do: array[len(array)-1] = temp
         - Return:
-            Array
+            array
 
     Time Complexity:
         O(N)
@@ -19,8 +19,8 @@ def left_rotate_array_by_one_optimal(array):
     temp = array[0]
 
     for i in range(1, len(array)):
-        array[i-1] = array[i]
+        array[i - 1] = array[i]
 
-    array[len(array)-1] = temp
+    array[len(array) - 1] = temp
 
     return array

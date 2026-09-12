@@ -28,6 +28,7 @@ def remove_duplicates_from_sorted_array_naive(array):
 
     return array, len(unique_array_set)
 
+
 def remove_duplicates_from_sorted_array_optimal(array):
     """
     Approach:
@@ -52,7 +53,7 @@ def remove_duplicates_from_sorted_array_optimal(array):
     left = 1
 
     for right in range(1, len(array)):
-        if array[right-1] != array[right]:
+        if array[right - 1] != array[right]:
             array[left] = array[right]
             left += 1
 

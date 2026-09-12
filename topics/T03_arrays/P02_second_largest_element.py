@@ -12,11 +12,12 @@ def second_largest_element_naive(array):
     """
     sorted_array = sorted(array)
 
-    for i in range(len(sorted_array)-1, 0, -1):
-        if sorted_array[i] != sorted_array[i-1]:
-            return sorted_array[i-1]
+    for i in range(len(sorted_array) - 1, 0, -1):
+        if sorted_array[i] != sorted_array[i - 1]:
+            return sorted_array[i - 1]
 
     return None
+
 
 def second_largest_element_better(array):
     """
@@ -34,7 +35,7 @@ def second_largest_element_better(array):
         O(1)
     """
     first_largest = array[0]
-    second_largest = float('-inf')
+    second_largest = float("-inf")
 
     for element in array:
         if element > first_largest:
@@ -44,10 +45,11 @@ def second_largest_element_better(array):
         if element < first_largest and element > second_largest:
             second_largest = element
 
-    if second_largest == float('-inf'):
+    if second_largest == float("-inf"):
         return None
     else:
         return second_largest
+
 
 def second_largest_element_optimal(array):
     """
@@ -61,7 +63,7 @@ def second_largest_element_optimal(array):
         O(1)
     """
     first_largest = array[0]
-    second_largest = float('-inf')
+    second_largest = float("-inf")
 
     for element in array:
         if element > first_largest:
@@ -71,7 +73,7 @@ def second_largest_element_optimal(array):
         elif element < first_largest and element > second_largest:
             second_largest = element
 
-    if second_largest == float('-inf'):
+    if second_largest == float("-inf"):
         return None
     else:
         return second_largest
