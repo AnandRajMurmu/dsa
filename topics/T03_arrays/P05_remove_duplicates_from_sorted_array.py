@@ -35,7 +35,7 @@ def remove_duplicates_from_sorted_array_optimal(array):
         - Compare (right - 1) != (right) till array ends
         - If condition is
             True:
-                Do array[right] = array[left]
+                Do: array[right] = array[left]
             False:
                 Pass
         - Return:

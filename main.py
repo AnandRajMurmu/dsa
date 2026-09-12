@@ -7,7 +7,7 @@ def main():
 
     display_topic("ARRAYS")
 
-    arrays.remove_duplicates_from_sorted_array()
+    arrays.left_rotate_array_by_one()
 
 
 if __name__ == "__main__":

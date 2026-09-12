@@ -35,6 +35,11 @@ from topics.T03_arrays.P05_remove_duplicates_from_sorted_array import (
     remove_duplicates_from_sorted_array_optimal,
 )
 
+from topics.T03_arrays.P06_left_rotate_array_by_one import (
+    left_rotate_array_by_one_optimal,
+)
+
+
 test_cases_default = load_test_cases("application/templates/test_cases_default.json")
 test_cases_02_sorted_arrays = load_test_cases("application/templates/test_cases_02_sorted_arrays.json")
 
@@ -160,3 +165,15 @@ def remove_duplicates_from_sorted_array(test_cases=test_cases_02_sorted_arrays):
                 "Length          ": length,
             }
         )
+
+
+def left_rotate_array_by_one(test_cases=test_cases_default):
+    display_problem("LEFT ROTATE ARRAY BY ONE")
+
+    display_approach("OPTIMAL")
+
+    display_description("The rotated array by 1 for")
+
+    for test_case in test_cases:
+        result = run_test_case(left_rotate_array_by_one_optimal, test_case)
+        display_result(result)
