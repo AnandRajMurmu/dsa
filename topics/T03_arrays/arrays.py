@@ -7,7 +7,6 @@ from application.display.console import (
     display_fields,
     display_problem,
     display_result,
-    display_topic,
 )
 
 from topics.T03_arrays.P01_largest_element import (
@@ -31,19 +30,23 @@ from topics.T03_arrays.P04_array_is_sorted import (
     array_is_sorted_optimal
 )
 
-test_cases_default = load_test_cases("application/templates/default_test_cases.json")
+from topics.T03_arrays.P05_remove_duplicates_from_sorted_array import (
+    remove_duplicates_from_sorted_array_naive,
+    remove_duplicates_from_sorted_array_optimal,
+)
 
-display_topic("ARRAYS")
+test_cases_default = load_test_cases("application/templates/test_cases_default.json")
+test_cases_02_sorted_arrays = load_test_cases("application/templates/test_cases_02_sorted_arrays.json")
 
 
-def largest_element():
+def largest_element(test_cases=test_cases_default):
     display_problem("LARGEST ELEMENT")
 
     display_approach("Naive")
 
     display_description("The largest element from")
 
-    for test_case in test_cases_default:
+    for test_case in test_cases:
         result = run_test_case(largest_element_naive, test_case)
         display_result(result)
 
@@ -51,19 +54,19 @@ def largest_element():
 
     display_description("The largest element from")
 
-    for test_case in test_cases_default:
+    for test_case in test_cases:
         result = run_test_case(largest_element_optimal, test_case)
         display_result(result)
 
 
-def second_largest_element():
+def second_largest_element(test_cases=test_cases_default):
     display_problem("SECOND LARGEST ELEMENT")
 
     display_approach("Naive")
 
     display_description("The second largest element from")
 
-    for test_case in test_cases_default:
+    for test_case in test_cases:
         result = run_test_case(second_largest_element_naive, test_case)
         display_result(result)
 
@@ -71,7 +74,7 @@ def second_largest_element():
 
     display_description("The second largest element from")
 
-    for test_case in test_cases_default:
+    for test_case in test_cases:
         result = run_test_case(second_largest_element_better, test_case)
         display_result(result)
 
@@ -79,19 +82,19 @@ def second_largest_element():
 
     display_description("The second largest element from")
 
-    for test_case in test_cases_default:
+    for test_case in test_cases:
         result = run_test_case(second_largest_element_optimal, test_case)
         display_result(result)
 
 
-def second_smallest_element():
+def second_smallest_element(test_cases=test_cases_default):
     display_problem("SECOND SMALLEST ELEMENT")
 
     display_approach("Naive")
 
     display_description("The second smallest element from")
 
-    for test_case in test_cases_default:
+    for test_case in test_cases:
         result = run_test_case(second_smallest_element_naive, test_case)
         display_result(result)
 
@@ -99,7 +102,7 @@ def second_smallest_element():
 
     display_description("The second smallest element from")
 
-    for test_case in test_cases_default:
+    for test_case in test_cases:
         result = run_test_case(second_smallest_element_better, test_case)
         display_result(result)
 
@@ -107,21 +110,53 @@ def second_smallest_element():
 
     display_description("The second smallest element from")
 
-    for test_case in test_cases_default:
+    for test_case in test_cases:
         result = run_test_case(second_smallest_element_optimal, test_case)
         display_result(result)
 
 
-def array_is_sorted():
+def array_is_sorted(test_cases=test_cases_default):
     display_problem("ARRAY IS SORTED")
 
-    display_approach("Naive")
+    display_approach("Optimal")
 
     display_description("The array")
 
     def format_array_is_sorted(value: bool) -> str:
         return "Sorted" if value else "Not Sorted"
 
-    for test_case in test_cases_default:
+    for test_case in test_cases:
         result = run_test_case(array_is_sorted_optimal, test_case)
         display_result(result, formatter=format_array_is_sorted)
+
+
+def remove_duplicates_from_sorted_array(test_cases=test_cases_02_sorted_arrays):
+    display_problem("REMOVE DUPLICATES FROM ARRAY")
+
+    display_approach("Naive")
+
+    for test_case in test_cases:
+        result = run_test_case(remove_duplicates_from_sorted_array_naive, test_case)
+
+        resulting_array, length = result.returned_value
+
+        display_fields(result,
+            fields={
+                "Resulting Array ": resulting_array,
+                "Length          ": length,
+            }
+        )
+
+    display_approach("Optimal")
+
+    for test_case in test_cases:
+        result = run_test_case(remove_duplicates_from_sorted_array_optimal, test_case)
+
+        resulting_array, length = result.returned_value
+
+        display_fields(result,
+            fields={
+                "Resulting Array ": resulting_array,
+                "Length          ": length,
+            }
+        )

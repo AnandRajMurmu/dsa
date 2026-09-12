@@ -21,6 +21,7 @@ def display_problem(title: str):
 
 def display_approach(name: str):
     print(f"\nApproach: {name}")
+    print("-" * DISPLAY_WIDTH)
 
 
 def display_description(description: str):
