@@ -44,6 +44,11 @@ from topics.T03_arrays.P07_left_rotate_array_by_k import (
     left_rotate_array_by_k_optimal,
 )
 
+from topics.T03_arrays.P08_right_rotate_array_by_k import (
+    right_rotate_array_by_k_naive,
+    right_rotate_array_by_k_optimal,
+)
+
 
 test_cases_default = load_test_cases("application/templates/test_cases_default.json")
 test_cases_01_overall = load_test_cases("application/templates/test_cases_01_overall.json")
@@ -207,4 +212,24 @@ def left_rotate_array_by_k(test_cases=test_cases_03_rotate_arrays_by_k):
 
     for test_case in test_cases:
         result = run_test_case(left_rotate_array_by_k_optimal, test_case["array"], test_case["k"])
+        display_result(f"{result.original_input} rotated by {test_case['k']} is {result.returned_value}")
+
+
+def right_rotate_array_by_k(test_cases=test_cases_03_rotate_arrays_by_k):
+    display_problem("RIGHT ROTATE ARRAY BY K")
+
+    display_approach("NAIVE")
+
+    display_description("The array")
+
+    for test_case in test_cases:
+        result = run_test_case(right_rotate_array_by_k_naive, test_case["array"], test_case["k"])
+        display_result(f"{result.original_input} rotated by {test_case['k']} is {result.returned_value}")
+
+    display_approach("OPTIMAL")
+
+    display_description("The array")
+
+    for test_case in test_cases:
+        result = run_test_case(right_rotate_array_by_k_optimal, test_case["array"], test_case["k"])
         display_result(f"{result.original_input} rotated by {test_case['k']} is {result.returned_value}")
