@@ -49,12 +49,17 @@ from topics.T03_arrays.P08_right_rotate_array_by_k import (
     right_rotate_array_by_k_optimal,
 )
 
+from topics.T03_arrays.P09_move_zeroes_to_end import (
+    move_zeroes_to_end_naive,
+    move_zeroes_to_end_optimal
+)
+
 
 test_cases_default = load_test_cases("application/templates/test_cases_default.json")
 test_cases_01_overall = load_test_cases("application/templates/test_cases_01_overall.json")
 test_cases_02_sorted_arrays = load_test_cases("application/templates/test_cases_02_sorted_arrays.json")
 test_cases_03_rotate_arrays_by_k = load_test_cases("application/templates/test_cases_03_rotate_arrays_by_k.json")
-
+test_cases_04_move_zeroes_to_end = load_test_cases("application/templates/test_cases_04_move_zeroes_to_end.json")
 
 def largest_element(test_cases=test_cases_default):
     display_problem("LARGEST ELEMENT")
@@ -233,3 +238,23 @@ def right_rotate_array_by_k(test_cases=test_cases_03_rotate_arrays_by_k):
     for test_case in test_cases:
         result = run_test_case(right_rotate_array_by_k_optimal, test_case["array"], test_case["k"])
         display_result(f"{result.original_input} rotated by {test_case['k']} is {result.returned_value}")
+
+
+def move_zeroes_to_end(test_cases=test_cases_04_move_zeroes_to_end):
+    display_problem("MOVE ZEROES TO END")
+
+    display_approach("NAIVE")
+
+    display_description("The array becomes")
+
+    for test_case in test_cases:
+        result = run_test_case(move_zeroes_to_end_naive, test_case)
+        display_result(f"{result.original_input} ---> {result.returned_value}")
+
+    display_approach("OPTIMAL")
+
+    display_description("The array becomes")
+
+    for test_case in test_cases:
+        result = run_test_case(move_zeroes_to_end_optimal, test_case)
+        display_result(f"{result.original_input} ---> {result.returned_value}")

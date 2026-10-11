@@ -7,7 +7,7 @@ def main():
 
     display_topic("ARRAYS")
 
-    arrays.right_rotate_array_by_k()
+    arrays.move_zeroes_to_end()
 
 
 if __name__ == "__main__":
